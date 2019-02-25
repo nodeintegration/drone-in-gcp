@@ -162,16 +162,4 @@ data "google_service_account_key" "autoscaler" {
 }
 
 ## Autoscaler serivce account policy
-# this is garbage at getting to work
-#resource "google_project_iam_custom_role" "autoscaler" {
-#  role_id     = "droneAutoscaler"
-#  title       = "Drone Autoscaler Role"
-#  description = "Role for allowing members to control gcp compute instances"
-#  permissions = ["roles/compute.admin"]
-#}
-#resource "google_project_iam_binding" "autoscaler" {
-#    role    = "roles/compute.admin"
-#     members = [
-#         "serviceAccount:${google_service_account.autoscaler.email}"
-#     ]
-##}
+# at the moment you'll need to add the appropriate permissions to the autoscaler service account
